@@ -1,6 +1,8 @@
 package com.example.appconejitos;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
@@ -26,13 +28,23 @@ public class MainActivity extends AppCompatActivity {
 
         ranas= new ImageView[7];
         for (int i=0; i<ranas.length; i++){
-         ranas[i]=findViewById(ids[i]);
+            ranas[i]=findViewById(ids[i]);
+            int index = i;
+            ranas[i].setOnClickListener(v -> {
+                moverRanas(index);
+                for (ImageView iv : ranas) {
+                    asignarimagenes(iv);
+                }
+            });
         }
 
+        inicializar();
+        for (ImageView iv : ranas) {
+            asignarimagenes(iv);
+        }
 
-
-
-
+        Button fin = findViewById(R.id.btnFin);
+        fin.setOnClickListener(v -> startActivity(new Intent(this, ResultActivity.class)));
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
