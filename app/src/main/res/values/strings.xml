@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">AppConejitos</string>
+    <string name="jugar">Jugar</string>
+    <string name="reglas">Reglas</string>
+    <string name="resultados">Resultados</string>
+    <string name="volver">Volver</string>
+    <string name="volver_inicio">Volver al inicio</string>
+    <string name="reglas_text">Mueve los conejitos al lado contrario saltando uno o dos espacios.</string>
+    <string name="finalizar">Finalizar</string>
 </resources>
