@@ -57,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
         ranas[1].setTag(2);
         ranas[2].setTag(3);
         ranas[3].setTag(0);
-        ranas[4].setTag(5);
-        ranas[5].setTag(6);
-        ranas[6].setTag(7);
+        ranas[4].setTag(4);
+        ranas[5].setTag(5);
+        ranas[6].setTag(6);
     }
 
     private void asignarimagenes(ImageView imagen){
@@ -106,21 +106,19 @@ public class MainActivity extends AppCompatActivity {
         if (Math.abs(vacio - desde) == 1) {
             if (tagDesde >= 1 && tagDesde <= 3 && vacio > desde) {
                 intercambiarTag(desde, vacio);
-            } else if (tagDesde>=5 && tagDesde <=7 && vacio< desde){
-                intercambiarTag(desde,vacio);
+            } else if (tagDesde >= 4 && tagDesde <= 6 && vacio < desde) {
+                intercambiarTag(desde, vacio);
             }
         }
 
-        if (Math.abs(vacio-desde)==2){
-            int medio =(desde+ vacio)/2;
-            int tagmedio= (int) ranas[medio].getTag();
-            if (tagmedio!= 0){
-                if (Math.abs(vacio - desde) == 1) {
-                    if (tagDesde >= 1 && tagDesde <= 3 && vacio > desde) {
-                        intercambiarTag(desde, vacio);
-                    } else if (tagDesde>=5 && tagDesde <=7 && vacio< desde){
-                        intercambiarTag(desde,vacio);
-                    }
+        if (Math.abs(vacio - desde) == 2) {
+            int medio = (desde + vacio) / 2;
+            int tagmedio = (int) ranas[medio].getTag();
+            if (tagmedio != 0) {
+                if (tagDesde >= 1 && tagDesde <= 3 && vacio > desde) {
+                    intercambiarTag(desde, vacio);
+                } else if (tagDesde >= 4 && tagDesde <= 6 && vacio < desde) {
+                    intercambiarTag(desde, vacio);
                 }
             }
         }
